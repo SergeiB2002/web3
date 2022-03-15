@@ -12,19 +12,22 @@ label{
 input[type=text] {
   padding:10px;
   margin:10px 0;
-  border:0;
+  border:1;
+    border-radius:15px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 input[type=email] {
   padding:10px;
   margin:10px 0;
-  border:0;
+  border:1;
+    border-radius:15px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 input[type=date] {
   padding:10px;
   margin:10px 0;
-  border:0;
+  border:1;
+    border-radius:15px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 textarea {
@@ -32,7 +35,7 @@ textarea {
   padding:15px;
   margin:10px 0;
   border-radius:15px;
-  border:0;
+  border:1;
   box-shadow:4px 4px 10px rgba(0,0,0,0.06);
   height:150px;
 }
