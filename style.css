@@ -25,7 +25,7 @@ input[type=date] {
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 textarea {
-  width:100%;
+  width:50%;
   resize: vertical;
   padding:15px;
   border-radius:15px;
