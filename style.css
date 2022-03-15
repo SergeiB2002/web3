@@ -34,6 +34,10 @@ input[type=date] {
     border-radius:15px;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
+select {
+  padding:10px;
+  border-radius:10px;
+}
 textarea {
   resize: vertical;
   padding:15px;
