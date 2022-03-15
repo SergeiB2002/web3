@@ -6,7 +6,11 @@
 div.table ,#form, div.link-list{
     background-color: rgba(123, 0, 212, 0.24);
 }
-label{
+form {
+  font-family:inherit;
+  font-size: inherit;
+}
+label {
     margin:10px 0;
 }
 input[type=text] {
