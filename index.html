@@ -30,47 +30,44 @@
       </label><br />
 
       <label>
-        Дата рождения:<br />
-        <select id="year"></select>
+        Год рождения:<br />
+        <select id="year" name="year"></select>
       </label><br />
 	  
 	  Пол:<br />
       <label><input type="radio" checked="checked"
-        name="radio-group-1" value="Мужской" />
+        name="radio-pol" value="Мужской" />
         Мужской</label>
       <label><input type="radio"
-        name="radio-group-1" value="Женский" />
-        Женский</label>
-	  <label><input type="radio"
-        name="radio-group-1" value="Отсутствует" />
-        Отсутствует</label><br />
+        name="radio-pol" value="Женский" />
+        Женский</label><br />
 		
 	  Количество конечностей:<br />
       <label><input type="radio"
-        name="radio-group-2" value="0" />
+        name="radio-limb" value="0" />
         0</label>
       <label><input type="radio"
-        name="radio-group-2" value="1" />
+        name="radio-limb" value="1" />
         1</label>
 	  <label><input type="radio"
-        name="radio-group-2" value="2" />
+        name="radio-limb" value="2" />
         2</label>
 	  <label><input type="radio"
-        name="radio-group-2" value="3" />
+        name="radio-limb" value="3" />
         3</label>
 	  <label><input type="radio" checked="checked"
-        name="radio-group-2" value="4" />
+        name="radio-limb" value="4" />
         4</label><br />
 		
 	  <label>
         Сверхспособности:
         <br />
-        <select name="field-listbox"
+        <select name="field-super[]"
           multiple="multiple">
-          <option value="Бессмертие">Бессмертие</option>
-          <option value="Noclip">No clip</option>
-          <option value="Суперсила" selected="selected">Суперсила</option>
-	  <option value="Телепатия">Телепатия</option>
+          <option value="immortal">Бессмертие</option>
+          <option value="noclip">No clip</option>
+          <option value="power" selected="selected">Суперсила</option>
+	  <option value="telepat">Телепатия</option>
         </select>
       </label><br />
 	  
@@ -85,9 +82,20 @@
         Я болею за Red Bull Racing</label><br />
 
       Если уверенны в своем ответе нажимайте:
-      <input type="submit" value="Отправить" />
+      <input type="submit" value="Send" />
     </form>
-  
+   <script type="text/javascript">
+    window.onload = function () {
+        var ddlYears = document.getElementById("year");
+        var currentYear = (new Date()).getFullYear();
+        for (var i = 1950; i <= currentYear; i++) {
+            var option = document.createElement("OPTION");
+            option.innerHTML = i;
+            option.value = i;
+            ddlYears.appendChild(option);
+        }
+    };
+   </script>
   </body>
 
 </html>
