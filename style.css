@@ -3,6 +3,9 @@
     max-width: 960px;
     margin: 0 auto;
 }
+body{
+    font-family: "Montserrat", sans-serif;
+}
 div.table ,#form, div.link-list{
     background-color: rgba(123, 0, 212, 0.24);
 }
