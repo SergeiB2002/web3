@@ -31,7 +31,15 @@
 
       <label>
         Год рождения:<br />
-        <select id="year" name="year"></select>
+        <select id="year" name="year">
+	 <?php 
+          $year = date('Y');
+          $min = $year - 60;
+          $max = $year;
+          for( $i=$max; $i>=$min; $i-- ) {
+            echo '<option value='.$i.'>'.$i.'</option>';
+          }?>
+	 </select>
       </label><br />
 	  
 	  Пол:<br />
@@ -84,19 +92,6 @@
       Если уверенны в своем ответе нажимайте:
       <input type="submit" value="Send" />
     </form>
-   <script type="text/javascript">
-    var today = new Date(),
-    yyyy = today.getFullYear(),
-    inpYear = $('#expYear'),
-    html = '';
-
-for (var i = 0; i < 10; i++, yyyy++) {
-    html = html + '<option>' + yyyy + '</option>';
-};    
-
-console.log(html);
-inpYear.html(html);
-   </script>
   </body>
 
 </html>
