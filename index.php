@@ -26,14 +26,14 @@ if(!preg_match($reg,$name)){
 	exit();
 }
 if($limbs < 1){
-	print_r('Invalid am of limbs');
+	print_r('Неверное количество(?) конечностей');
 	exit();
 }
 if(!preg_match($bioreg,$bio)){
 	print_r('Неверный формат биографии');
 	exit();
 }
-if(!preg_match($mailregex,$email)){
+if(!preg_match($mailreg,$email)){
 	print_r('Неверный формат email');
 	exit();
 }
