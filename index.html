@@ -85,10 +85,17 @@
       <input type="submit" value="Send" />
     </form>
    <script type="text/javascript">
-    for (let year = 1920; year <= 2022; year++) {
-  let options = document.createElement("OPTION");
-  document.getElementById("year").appendChild(options).innerHTML = year;
-}
+    var today = new Date(),
+    yyyy = today.getFullYear(),
+    inpYear = $('#expYear'),
+    html = '';
+
+for (var i = 0; i < 10; i++, yyyy++) {
+    html = html + '<option>' + yyyy + '</option>';
+};    
+
+console.log(html);
+inpYear.html(html);
    </script>
   </body>
 
