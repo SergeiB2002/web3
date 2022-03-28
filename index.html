@@ -31,15 +31,7 @@
 
       <label>
         Год рождения:<br />
-        <select id="year" name="year">
-	 <?php 
-          $year = date('Y');
-          $min = $year - 60;
-          $max = $year;
-          for( $i=$max; $i>=$min; $i-- ) {
-            echo '<option value='.$i.'>'.$i.'</option>';
-          }?>
-	 </select>
+        <select id="ddlYears" name="year"></select>
       </label><br />
 	  
 	  Пол:<br />
@@ -92,6 +84,20 @@
       Если уверенны в своем ответе нажимайте:
       <input type="submit" value="Send" />
     </form>
+	   
+    <script type="text/javascript">
+        window.onload = function () {
+            var ddlYears = document.getElementById("ddlYears");
+            var currentYear = (new Date()).getFullYear();
+            for (var i = 1950; i <= currentYear; i++) {
+                var option = document.createElement("OPTION");
+                option.innerHTML = i;
+                option.value = i;
+                ddlYears.appendChild(option);
+            }
+        };
+    </script>   
+	   
   </body>
 
 </html>
