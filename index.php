@@ -51,3 +51,35 @@ foreach($superpowers as $checking){
 $user = 'u41028';
 $pass = '2356452';
 $db = new PDO('mysql:host=localhost;dbname=u41028', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+try {
+  $stmt = $db->prepare("INSERT INTO application SET name=:name, email=:email, year=:byear, pol=:pol, konech=:limbs, biogr=:bio");
+  $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':email', $email);
+  $stmt->bindParam(':byear', $birth_year);
+  $stmt->bindParam(':pol', $pol);
+  $stmt->bindParam(':limbs', $limbs);
+  $stmt->bindParam(':bio', $bio);
+  if($stmt->execute()==false){
+  print_r($stmt->errorCode());
+  print_r($stmt->errorInfo());
+  exit();
+  }
+  $id = $db->lastInsertId();
+  $sppe= $db->prepare("INSERT INTO superp SET name=:name, per_id=:person");
+  $sppe->bindParam(':person', $id);
+  foreach($superpowers as $inserting){
+	$sppe->bindParam(':name', $inserting);
+	if($sppe->execute()==false){
+	  print_r($sppe->errorCode());
+	  print_r($sppe->errorInfo());
+	  exit();
+	}
+  }
+}
+catch(PDOException $e){
+  print('Error : ' . $e->getMessage());
+  exit();
+}
+
+print_r("Данные отправлены в бд");
+?>
